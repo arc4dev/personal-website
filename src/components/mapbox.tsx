@@ -15,9 +15,40 @@ const MapBox: FC = () => {
 	const mapRef = useRef<mapboxgl.Map | null>(null)
 	const markerRef = useRef<mapboxgl.Marker | null>(null)
 	const [isLoaded, setIsLoaded] = useState(false)
+	const [shouldInitMap, setShouldInitMap] = useState(() => {
+		if (typeof window === 'undefined') return false
+		return !('IntersectionObserver' in window)
+	})
 
 	useEffect(() => {
-		if (!mapContainerRef.current) return
+		const container = mapContainerRef.current
+		if (!container || shouldInitMap) return
+		if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const isIntersecting = entries.some(
+					(entry) => entry.isIntersecting || entry.intersectionRatio > 0
+				)
+				if (isIntersecting) {
+					setShouldInitMap(true)
+					observer.disconnect()
+				}
+			},
+			{
+				rootMargin: '200px'
+			}
+		)
+
+		observer.observe(container)
+
+		return () => {
+			observer.disconnect()
+		}
+	}, [shouldInitMap])
+
+	useEffect(() => {
+		if (!shouldInitMap || !mapContainerRef.current) return
 
 		if (!accessToken) {
 			console.error('Mapbox access token is missing')
@@ -81,7 +112,7 @@ const MapBox: FC = () => {
 			markerRef.current?.remove()
 			mapRef.current?.remove()
 		}
-	}, [])
+	}, [shouldInitMap])
 
 	const handleZoomIn = () => {
 		mapRef.current?.zoomIn()
