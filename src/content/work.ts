@@ -37,7 +37,7 @@ export const workItems: ExperienceItem[] = [
 		roles: ['Full Stack Developer', 'Intern'],
 		achievements: [
 			'Completed an <strong class="text-white/90">intense 10-month MERN full-stack program</strong> with a focus on agile teamwork.',
-			'Built and deployed 5+ individual and team real-world web apps.',
+			'Built and deployed 5+ individual and team <strong class="text-white/90">real-world web apps.</strong>',
 			'<strong class="text-white/90">Led a 4-person team</strong> developing a finance management web app.',
 			'Worked under <strong class="text-white/90">senior mentor guidance</strong> following best practices and structured code reviews.',
 			'Gained strong foundations in <strong class="text-white/90">modern web architecture</strong>, <strong class="text-white/90">Git workflows</strong>, <strong class="text-white/90">agile teamwork</strong>, and product delivery.'

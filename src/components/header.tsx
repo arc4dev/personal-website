@@ -30,7 +30,7 @@ const Header: FC<Props> = () => {
 		<header className='mb-16 sm:mb-20 px-4 py-2 sticky top-3 z-100'>
 			<div
 				className={twMerge(
-					'flex items-center justify-between max-w-5xl mx-auto px-3 py-2 rounded-2xl transition-[background-color_max-width_backdrop-blur] ease-fast-in-slow-out',
+					'flex items-center justify-between max-w-5xl mx-auto px-3 py-2 rounded-2xl transition-[background-color_max-width_backdrop-filter] ease-fast-in-slow-out',
 					isScrolled ? 'bg-primary-800/90 backdrop-blur-3xl max-w-xs duration-450' : 'duration-1000'
 				)}
 			>
@@ -44,7 +44,7 @@ const Header: FC<Props> = () => {
 							src={avatarImg}
 							className='absolute inset-0 size-full rounded-full object-cover backface-hidden'
 							alt='Arkadiusz Sroczyk, Arek Sroczyk'
-							priority
+							priority={true}
 						/>
 						<Image
 							src={avatarRealImg}

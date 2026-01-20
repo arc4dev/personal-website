@@ -28,7 +28,7 @@ export default function Home() {
 								<div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-2.5 animate-ping rounded-full bg-green/50'></div>
 							</div>
 							<div className='uppercase font-mono whitespace-nowrap tracking-wider font-regular text-white/25 text-[11px] sm:text-xs'>
-								Building{' '}
+								{/* Building{' '}
 								<a
 									href='https://jakaszkola.pl/'
 									className='hover:text-white/50 transition-colors'
@@ -36,7 +36,8 @@ export default function Home() {
 									rel='nofollow noopenner norefferer'
 								>
 									jakaszkola.pl
-								</a>
+								</a> */}
+								Chilling out
 							</div>
 						</div>
 
@@ -44,7 +45,6 @@ export default function Home() {
 							<Image
 								src={avatarImg}
 								priority={true}
-								fetchPriority='high'
 								className='size-24 md:size-28 rounded-full mb-3'
 								alt='Arkadiusz Sroczyk, Arek Sroczyk, Front-end Developer, Engineer, Full-stack Developer, Software Engineer'
 							/>
@@ -55,7 +55,7 @@ export default function Home() {
 						</figure>
 
 						<h1 className='text-center max-w-[20ch] mx-auto text-balance sm:text-[40px] md:text-5xl leading-none text-[34px] font-semibold tracking-[-0.04em]'>
-							{/* I build and create things from scratch */}I like to build things from zero to one
+							I like to build things from zero to one
 						</h1>
 						{/* <p className='text-white/80 text-balance max-w-[50ch] mx-auto text-center text-15 sm:text-base'>
 							I&apos;m Arek, 22y/o Front-end Developer passionate about turning ideas into real
@@ -92,7 +92,6 @@ export default function Home() {
 						<Image
 							src={leanStartupBookImg}
 							priority={true}
-							fetchPriority='high'
 							alt='Lean Startup book cover'
 							className='rounded-3xl group-hover:-rotate-25 group-hover:-translate-x-7 w-auto h-48 md:h-68 lg:h-54 absolute top-1/2 -translate-y-1/2 -right-12 -rotate-20 transition-all duration-600 ease-fast-in-slow-out shadow-[-7px_0_20px_rgba(247,246,242,0.13)]'
 						/>
@@ -192,7 +191,21 @@ export default function Home() {
 						<AnimatedArrowButton className='absolute left-3 bottom-3 ' />
 					</a>
 
-					<div className='bento-empty rounded-3xl hidden md:block bg-primary w-auto h-auto lg:aspect-square'></div>
+					<div className='bento-empty hidden md:flex rounded-3xl bg-primary overflow-hidden relative p-5 lg:aspect-square items-center justify-center border border-white/5'>
+						{/* <div
+							className='absolute inset-0 opacity-35 bg-[radial-gradient(circle_at_18%_22%,rgba(170,241,123,0.2),transparent_42%),radial-gradient(circle_at_82%_8%,rgba(255,255,255,0.12),transparent_38%)]'
+							aria-hidden='true'
+						></div> */}
+
+						<p className='text-center text-balance flex flex-col gap-1'>
+							<span className='text-white/50 text-xs font-mono uppercase tracking-wider max-w-[25ch]'>
+								Reminder
+							</span>
+							<span className='font-semibold text-transparent bg-clip-text bg-[linear-gradient(120deg,rgba(230,232,236,0.9),rgba(120,134,148,0.95))]'>
+								Just Do It.
+							</span>
+						</p>
+					</div>
 				</div>
 			</section>
 
