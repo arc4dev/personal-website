@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 import Header from '@/components/header'
@@ -17,9 +18,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: 'Arek Sroczyk | Front-end Engineer',
+	title: 'Arek Sroczyk | Front-end Developer',
 	description:
-		'Portfolio of Arek Sroczyk, a passionate Front-end Engineer specializing in creating engaging and user-friendly web applications.'
+		'Personal website of Arek Sroczyk, a 22 y/o Front-end Developer specializing in creating websites and web applications.'
 }
 
 export default function RootLayout({
@@ -34,6 +35,8 @@ export default function RootLayout({
 					<Header />
 					<main>{children}</main>
 					<Footer />
+
+					<SpeedInsights />
 				</body>
 			</LenisProvider>
 		</html>
