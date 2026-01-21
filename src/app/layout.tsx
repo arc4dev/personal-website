@@ -6,6 +6,7 @@ import './globals.css'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import LenisProvider from '@/components/lenis-provider'
+import IntersectObserverInit from '@/components/intersect-observer-init'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -32,10 +33,10 @@ export default function RootLayout({
 		<html lang='en'>
 			<LenisProvider>
 				<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+					<IntersectObserverInit />
 					<Header />
 					<main>{children}</main>
 					<Footer />
-
 					<SpeedInsights />
 				</body>
 			</LenisProvider>

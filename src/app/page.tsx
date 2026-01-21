@@ -20,7 +20,7 @@ export default function Home() {
 		<div className='px-4 sm:px-6'>
 			{/* Hero Bento Section */}
 			<section className='mb-20'>
-				<div className='bento-grid animate-fade-in will-change-transform'>
+				<div className='bento-grid fade-in-initial intersect:animate-fade-in will-change-transform intersect-once'>
 					{/* Main card */}
 					<div className='bg-primary relative bento-hero rounded-3xl px-6 py-8 sm:p-10 lg:p-8'>
 						<div className='px-4 py-1.5 rounded-t-xl bg-primary absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2'>
@@ -213,73 +213,79 @@ export default function Home() {
 
 			{/* Work Experience Section */}
 			<section className='mb-20 max-w-3xl mx-auto'>
-				<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
-					<BriefcaseBusiness className='size-3.5' />
-					<span>Professional</span>
-				</p>
-				<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
-					Work Experience
-				</h2>
+				<div className='fade-in-initial intersect:animate-fade-in will-change-transform intersect-once'>
+					<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
+						<BriefcaseBusiness className='size-3.5' />
+						<span>Professional</span>
+					</p>
+					<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
+						Work Experience
+					</h2>
 
-				<div className='flex flex-col gap-4'>
-					{workItems.map((item) => (
-						<ExperienceCard key={item.id} item={item} />
-					))}
+					<div className='flex flex-col gap-4'>
+						{workItems.map((item) => (
+							<ExperienceCard key={item.id} item={item} />
+						))}
+					</div>
 				</div>
 			</section>
 
 			{/* Education Section */}
 			<section className='mb-20 max-w-3xl mx-auto'>
-				<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
-					<GraduationCap className='size-3.5' />
-					<span>Learning</span>
-				</p>
-				<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
-					Education
-				</h2>
-				<div className='flex flex-col gap-4'>
-					{educationItems.map((item) => (
-						<ExperienceCard key={item.id} item={item} />
-					))}
+				<div className='fade-in-initial intersect:animate-fade-in will-change-transform intersect-once'>
+					<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
+						<GraduationCap className='size-3.5' />
+						<span>Learning</span>
+					</p>
+					<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
+						Education
+					</h2>
+					<div className='flex flex-col gap-4'>
+						{educationItems.map((item) => (
+							<ExperienceCard key={item.id} item={item} />
+						))}
+					</div>
 				</div>
 			</section>
 
 			{/* Technologies Section */}
 			<section className='mb-20 max-w-3xl mx-auto'>
-				<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
-					<Layers className='size-3.5' />
-					<span>Tech stack</span>
-				</p>
-				<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
-					Technologies I use to build
-				</h2>
+				<div className='fade-in-initial intersect:animate-fade-in will-change-transform intersect-once'>
+					<p className='flex items-center text-xs gap-1 text-white/50 justify-center mb-1 uppercase font-mono'>
+						<Layers className='size-3.5' />
+						<span>Tech stack</span>
+					</p>
+					<h2 className='text-center text-balance sm:text-3xl leading-tight text-[26px] font-semibold tracking-[-0.04em] mb-8'>
+						Technologies I use to build
+					</h2>
 
-				<div className='flex flex-col gap-3'>
-					{Object.entries(technologiesByCategory).map(([category, techs]) => (
-						<div key={category} className='px-4 py-6 rounded-3xl bg-primary'>
-							<h3 className='text-xs uppercase font-mono font-medium text-white/50 mb-4 tracking-wider text-center'>
-								{category}
-							</h3>
-							<ul className='flex flex-wrap justify-center items-center gap-2'>
-								{techs.map((tech) => {
-									const Icon = tech.icon
-									return (
-										<li key={tech.id} className='group'>
-											<a
-												href={tech.url}
-												target='_blank'
-												rel='nofollow noopener noreferrer'
-												className='flex focus-visible:ring-2 ring-white/20 px-3 py-1.5 items-center gap-2 tracking-[-0.04em] leading-tight bg-white/5 hover:bg-white/15 focus-visible:outline-hidden text-white/75 rounded-full transition-[background-color_transform] text-sm font-medium whitespace-nowrap active:scale-[0.98]'
-											>
-												<Icon className='size-3.5 opacity-90' />
-												<span>{tech.name}</span>
-											</a>
-										</li>
-									)
-								})}
-							</ul>
-						</div>
-					))}
+					<div className='flex flex-col gap-3'>
+						{Object.entries(technologiesByCategory).map(([category, techs]) => (
+							<div key={category} className='px-4 py-6 rounded-3xl bg-primary'>
+								<h3 className='text-xs uppercase font-mono font-medium text-white/50 mb-4 tracking-wider text-center'>
+									{category}
+								</h3>
+								<ul className='flex flex-wrap justify-center items-center gap-2'>
+									{techs.map((tech) => {
+										const Icon = tech.icon
+										return (
+											<li key={tech.id} className='group'>
+												<a
+													href={tech.url}
+													target='_blank'
+													rel='nofollow noopener noreferrer'
+													className='flex focus-visible:ring-2 ring-white/20 px-3 py-1.5 items-center gap-2 tracking-[-0.04em] leading-tight bg-white/5 hover:bg-white/15 focus-visible:outline-hidden text-white/75 rounded-full transition-[background-color_transform] text-sm font-medium whitespace-nowrap active:scale-[0.98]'
+												>
+													<Icon className='size-3.5 opacity-90' />
+													<span>{tech.name}</span>
+												</a>
+											</li>
+										)
+									})}
+								</ul>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
 		</div>

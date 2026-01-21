@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'tailwindcss-intersect';
 
 @theme inline {
 	/* Colors */
@@ -36,15 +37,21 @@
 			transform: translateY(0);
 		}
 	}
+}
 
-	@keyframes marquee {
-		0% {
-			transform: translateX(0%);
-		}
-		100% {
-			transform: translateX(-100%);
-		}
+/* @keyframes marquee {
+	0% {
+		transform: translateX(0%);
 	}
+	100% {
+		transform: translateX(-100%);
+	}
+} */
+
+@utility fade-in-initial {
+	opacity: 0;
+	filter: blur(4px);
+	transform: translateY(10px);
 }
 
 /* globals.css */
